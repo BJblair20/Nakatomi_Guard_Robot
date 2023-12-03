@@ -27,8 +27,10 @@ def run():
 #t1.join()
 #t2.join()
 
-print("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFf")
-time.sleep(9)
+run()
+
+#print("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFf")
+#time.sleep(9)
 
 #killme.togglePP()
 #killJohnLenon.toggleJL()
