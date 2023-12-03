@@ -39,7 +39,7 @@ class FaceRecognition:
 
     def run_recognition(self):
         print(data)
-        video_capture = cv2.VideoCapture(0)
+        video_capture = cv2.VideoCapture("/dev/ttyUSB0")
 
         if not video_capture.isOpened():
             print("Video source not found")
