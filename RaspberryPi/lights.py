@@ -2,7 +2,6 @@ import time
 import board
 import neopixel
 import pygame
-pygame.init()
 import os, sys
 
 global audioToggle
@@ -32,5 +31,5 @@ def soundCue():
 
 
 if __name__ == '__main__':
-    
+    pygame.init()
     soundCue()
