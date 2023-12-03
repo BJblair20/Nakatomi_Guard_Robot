@@ -1,0 +1,5 @@
+<__main__.Profiles object at 0x000001698C5A7BE0>, whiteList, image, genericus, for the glory of Rome, True
+<__main__.Profiles object at 0x00000130BDCA7BE0>, whiteList, handsome-cheerful-man-with-happy-smile_176420-18028.png, genericus, for the glory of Rome, True
+<__main__.Profiles object at 0x000002072FEA7FA0>, whiteList, handsome-cheerful-man-with-happy-smile_176420-18028.png, genericus, for the glory of Rome, True
+<__main__.Profiles object at 0x0000025602FA7FA0>, whiteList, handsome-cheerful-man-with-happy-smile_176420-18028.png, genericus, for the glory of Rome, True
+<__main__.Profiles object at 0x000001ED23DA7FA0>, whiteList, handsome-cheerful-man-with-happy-smile_176420-18028.png, genericus, for the glory of Rome, True
