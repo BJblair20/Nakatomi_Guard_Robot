@@ -42,7 +42,7 @@ def read_data():
                 print("Chip Temperature:" + str(temperature) + "℃\n")
                 ser.reset_input_buffer()
 
-if __name__ == "__main__":
+def main():
     try:
         if ser.isOpen() == False:
             ser.open()
@@ -51,4 +51,7 @@ if __name__ == "__main__":
         if ser != None:
             ser.close()
             print("program interrupted by the user")
+            
+if __name__ == "__main__":
+    main()
 
