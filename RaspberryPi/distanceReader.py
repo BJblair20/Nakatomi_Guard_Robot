@@ -12,6 +12,9 @@ def read_data():
             
             if bytes_serial[0] == 0x59 and bytes_serial[1] == 0x59: # python3
                 distance = bytes_serial[2] + bytes_serial[3]*256
+                if distance < 10:
+                    exit()
+                    
                 strength = bytes_serial[4] + bytes_serial[5]*256
                 temperature = bytes_serial[6] + bytes_serial[7]*256 # For TFLuna
                 temperature = (temperature/8) - 256
