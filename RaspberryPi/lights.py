@@ -7,6 +7,8 @@ import os, sys
 
 global audioToggle
 global lightToggle
+audioToggle = False
+lightToggle = False
 
 def lightsCue():
     pixels = neopixel.NeoPixel(board.D12, 32, auto_write=False)
