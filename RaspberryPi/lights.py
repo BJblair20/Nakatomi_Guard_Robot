@@ -24,12 +24,10 @@ def lightsCue():
         time.sleep(.01)
 
 def soundCue():
-    audio_file = os.path.dirname(__file__) + '/Sound/alarmSound.wav'
-    playsound(audio_file)
-    
-    #command = "mpg321 " + audio_file + " &"
-    #os.system(command)
-    print(audio_file)
+    while True:
+        audio_file = os.path.dirname(__file__) + '/Sound/alarmSound.wav'
+        playsound(audio_file)
+    #print(audio_file)
     #my_sound = pygame.mixer.Sound(audio_file)
     #my_sound.play()
 
