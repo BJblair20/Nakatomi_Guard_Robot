@@ -1,7 +1,8 @@
 import time
 import board
 import neopixel
-from playsound import playsound
+import pygame
+pygame.init()
 import os, sys
 
 global audioToggle
@@ -25,8 +26,9 @@ def lightsCue():
 def soundCue():
     audio_file = os.path.dirname(__file__) + '/Sound/alarmSound.wav'
     print(audio_file)
-    playsound(audio_file)
-    
+    my_sound = pygame.mixer.Sound(audio_file)
+    my_sound.play()
+
 
 
 if __name__ == '__main__':
