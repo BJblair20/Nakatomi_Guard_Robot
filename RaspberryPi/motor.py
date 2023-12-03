@@ -26,3 +26,7 @@ def turn():
         kit.motor1.throttle = -0.5
         kit.motor2.throttle = 0.5
         time.sleep(1)
+
+if __name__ == "__main__":
+    kit.motor1.throttle = 0
+    kit.motor2.throttle = 0
