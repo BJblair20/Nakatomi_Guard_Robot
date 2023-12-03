@@ -27,8 +27,8 @@ def soundCue():
     command = "mpg321 " + audio_file + " &"
     os.system(command)
     print(audio_file)
-    my_sound = pygame.mixer.Sound(audio_file)
-    my_sound.play()
+    #my_sound = pygame.mixer.Sound(audio_file)
+    #my_sound.play()
 
 
 
