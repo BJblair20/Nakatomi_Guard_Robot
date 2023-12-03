@@ -2,7 +2,7 @@ import time
 import board
 import neopixel
 #import pygame
-import playsound
+from playsound import playsound
 import os, sys
 
 global audioToggle
