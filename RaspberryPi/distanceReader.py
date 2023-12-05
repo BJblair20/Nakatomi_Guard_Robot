@@ -14,7 +14,7 @@ def read_data():
                 distance = bytes_serial[2] + bytes_serial[3]*256
                 print("Distance: " + str(distance))
                 if distance < 15:
-                    ser.reset_input_buffer()
+                    ser.close()
                     break
 
                 strength = bytes_serial[4] + bytes_serial[5]*256
