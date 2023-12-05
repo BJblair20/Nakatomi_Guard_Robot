@@ -38,6 +38,7 @@ class FaceRecognition:
         print(self.known_face_names)
 
     def run_recognition(self):
+        global data
         print(data)
         video_capture = cv2.VideoCapture(0)
 
@@ -110,6 +111,8 @@ def main():
     curDir = os.path.dirname(os.path.abspath(__file__))
     dir=os.path.join(curDir,"../App")
     dat1=dir + "/CSVTEST.txt"
+
+    global data 
     data = pd.read_csv(dat1)
     #print(data.keys())
     fr = FaceRecognition()
