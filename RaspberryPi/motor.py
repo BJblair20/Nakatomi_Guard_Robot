@@ -20,11 +20,11 @@ def turn():
 
     if flip == 0:
         kit.motor1.throttle = 0.5
-        kit.motor2.throttle = -0.5
+        kit.motor2.throttle = 0.5
         time.sleep(1)
     else:
         kit.motor1.throttle = -0.5
-        kit.motor2.throttle = 0.5
+        kit.motor2.throttle = -0.5
         time.sleep(1)
 
 if __name__ == "__main__":
