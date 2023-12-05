@@ -11,7 +11,7 @@ import motor
 
 def runMotor():
     global motorControl
-    while motorControl == True:
+    while not motorControl.is_set():
         print("Running Motor")
         motor.runMotor()
         print("Starting reader")
@@ -25,7 +25,7 @@ def camera():
     global motorControl
     time.sleep(2)
     #faceRec.main()
-    motorControl=False
+    motorControl.set()
     print("FFFFFAAAALSSE")
     motor.main()
 
