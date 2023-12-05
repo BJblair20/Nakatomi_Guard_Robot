@@ -19,12 +19,12 @@ def turn():
     flip = random.randint(0, 1)
 
     if flip == 0:
-        kit.motor1.throttle = 0.5
-        kit.motor2.throttle = 0.5
+        kit.motor1.throttle = 0.7
+        kit.motor2.throttle = 0.7
         time.sleep(0.5)
     else:
-        kit.motor1.throttle = -0.5
-        kit.motor2.throttle = -0.5
+        kit.motor1.throttle = -0.7
+        kit.motor2.throttle = -0.7
         time.sleep(0.5)
 
 if __name__ == "__main__":
