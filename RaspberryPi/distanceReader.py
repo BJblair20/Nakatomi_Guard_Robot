@@ -23,7 +23,7 @@ def read_data():
                 if temperature != 0:
                     print("Chip Temperature:" + str(temperature)+ "℃")
                 ser.reset_input_buffer()
-                
+            """
             if bytes_serial[0] == "Y" and bytes_serial[1] == "Y":
                 distL = int(bytes_serial[2].encode("hex"), 16)
                 distH = int(bytes_serial[3].encode("hex"), 16)
@@ -37,6 +37,7 @@ def read_data():
                 temperature = (temperature/8) - 256
                 
                 ser.reset_input_buffer()
+            """
 
 def main():
     print("GOT HERE")

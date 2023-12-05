@@ -19,6 +19,7 @@ def runMotor():
         print("Got out of reader")
         motor.turn()
         print("Motor Turned")
+        time.sleep(3)
 
 def camera():
     global motorControl
