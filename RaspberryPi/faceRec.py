@@ -105,13 +105,15 @@ class FaceRecognition:
         video_capture.release()
         cv2.destroyAllWindows()
 
-
-if __name__ == '__main__':
-    "GOT TO FILE"
+def main():
+   "GOT TO FILE"
     curDir = os.path.dirname(os.path.abspath(__file__))
     dir=os.path.join(curDir,"../../App")
     dat1=dir + "/CSVTEST.txt"
     data = pd.read_csv(dat1)
     #print(data.keys())
     fr = FaceRecognition()
-    fr.run_recognition()
+    fr.run_recognition() 
+   
+if __name__ == '__main__':
+    main()
