@@ -34,7 +34,6 @@ def camera():
 #t2 = threading.Thread(target=lights.lightsCue, name='t2')
 
 global motorControl
-motorControl = True
 
 #runMotor()
 
