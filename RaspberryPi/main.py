@@ -25,7 +25,7 @@ def camera():
     print("GOT CAMERA ")
     global motorControl
     time.sleep(0.5)
-    faceRec.main()
+    faceRec.start()
     motorControl.set()
     print("FFFFFAAAALSSE")
     motor.stopMotor()

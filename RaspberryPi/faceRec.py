@@ -76,15 +76,18 @@ class FaceRecognition:
                         
                         if authList == 'white':
                             print("YEEHAW WHITEY")
+                            return("White")
                             #key = False
                         elif authList == 'black':
                             print("BLACK REEEE")
+                            return("Black")
                             #key = False
                         
 
                     self.face_names.append(f'{name} ({confidence})')
                     print("OUT: ")
                     print(self.face_names)
+                    print(name)
                     
 
             self.process_current_frame = not self.process_current_frame
@@ -107,7 +110,7 @@ class FaceRecognition:
         video_capture.release()
         cv2.destroyAllWindows()
 
-def main():
+def start():
     print("GOT TO FILE")
     curDir = os.path.dirname(os.path.abspath(__file__))
     dir=os.path.join(curDir,"../App")
@@ -120,4 +123,4 @@ def main():
     fr.run_recognition() 
    
 if __name__ == '__main__':
-    main()
+    start()
