@@ -42,12 +42,12 @@ t1 = threading.Thread(target=runMotor, name='t1')
 t2 = threading.Thread(target=camera, name='t2')
 
 
-t2.start()
+#t2.start()
 time.sleep(10)
 t1.start()
  
 t1.join()
-t2.join()
+#t2.join()
 
 
 #runMotor()
