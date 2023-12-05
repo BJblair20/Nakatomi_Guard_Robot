@@ -27,6 +27,7 @@ def camera():
     #faceRec.main()
     motorControl=False
     print("FFFFFAAAALSSE")
+    motor.main()
 
 
 #t1 = threading.Thread(target=lights.soundCue, name='t1')
