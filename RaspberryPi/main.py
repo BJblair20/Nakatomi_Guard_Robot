@@ -1,24 +1,20 @@
 
 import threading
 import os
-import killme
-import killJohnLenon
+
 import time
-#import lights
-#import distanceReader
-#import motor
-import threadTest
+import lights
+import distanceReader
+import motor
+
 
 
 def runMotor():
     global motorControl
     while motorControl == True:
-        print("JJJJJ")
-        
-        
-        #motor.runMotor()
-        #distanceReader.main()
-        #motor.turn()
+        motor.runMotor()
+        distanceReader.main()
+        motor.turn()
 
 def camera():
     global motorControl
