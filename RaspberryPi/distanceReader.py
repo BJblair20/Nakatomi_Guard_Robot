@@ -20,8 +20,8 @@ def read_data():
                 temperature = bytes_serial[6] + bytes_serial[7]*256 # For TFLuna
                 temperature = (temperature/8) - 256
                 
-                if temperature != 0:
-                    print("Chip Temperature:" + str(temperature)+ "℃")
+                #if temperature != 0:
+                    #print("Chip Temperature:" + str(temperature)+ "℃")
                 ser.reset_input_buffer()
             """
             if bytes_serial[0] == "Y" and bytes_serial[1] == "Y":
