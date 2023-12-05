@@ -5,15 +5,12 @@ ser = serial.Serial("/dev/ttyS0", 115200)
 # we define a new function that will get the data from LiDAR and publish it
 def read_data():
     time.sleep(1)  # Sleep 1000ms
-    print("GOT HERE 2")
     while True:
         counter = ser.in_waiting # count the number of bytes of the serial port
         if counter > 8:
             bytes_serial = ser.read(9)
             ser.reset_input_buffer()
-            print("GOT HERE 4")
             if bytes_serial[0] == 0x59 and bytes_serial[1] == 0x59: # python3
-                print("REEEEEEEEEEEEEEEEEEEEEEEEE")
                 distance = bytes_serial[2] + bytes_serial[3]*256
                 print("Distance: " + str(distance))
                 if distance < 15:
@@ -22,9 +19,7 @@ def read_data():
                 strength = bytes_serial[4] + bytes_serial[5]*256
                 temperature = bytes_serial[6] + bytes_serial[7]*256 # For TFLuna
                 temperature = (temperature/8) - 256
-                print("TF-Luna python3 portion")
-                print("Distance:"+ str(distance) + "cm")
-                print("Strength:" + str(strength))
+                
                 if temperature != 0:
                     print("Chip Temperature:" + str(temperature)+ "℃")
                 ser.reset_input_buffer()
@@ -40,10 +35,7 @@ def read_data():
                 tempH = int(bytes_serial[7].encode("hex"), 16)
                 temperature = tempL + tempH*256
                 temperature = (temperature/8) - 256
-                print("TF-Luna python2 portion")
-                print("Distance:"+ str(distance) + "cm\n")
-                print("Strength:" + str(strength) + "\n")
-                print("Chip Temperature:" + str(temperature) + "℃\n")
+                
                 ser.reset_input_buffer()
 
 def main():
