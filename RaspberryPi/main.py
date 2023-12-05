@@ -22,6 +22,7 @@ def runMotor():
         time.sleep(3)
 
 def camera():
+    print("GOT CAMERA ")
     global motorControl
     time.sleep(2)
     #faceRec.main()
@@ -40,8 +41,10 @@ motorControl = threading.Event()
 t1 = threading.Thread(target=runMotor, name='t1')
 t2 = threading.Thread(target=camera, name='t2')
 
-t1.start()
+
 t2.start()
+time.sleep(10)
+t1.start()
  
 t1.join()
 t2.join()
