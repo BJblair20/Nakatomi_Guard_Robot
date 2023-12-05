@@ -12,9 +12,12 @@ import motor
 def runMotor():
     global motorControl
     while motorControl == True:
+        print("Running Motor")
         motor.runMotor()
         distanceReader.main()
+        print("Got out of reader")
         motor.turn()
+        print("Motor Turned")
 
 def camera():
     global motorControl
