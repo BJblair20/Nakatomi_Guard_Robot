@@ -7,13 +7,13 @@ def read_data():
     time.sleep(1)  # Sleep 1000ms
     print("GOT HERE 2")
     while True:
-        print("GOT HERE 3")
         counter = ser.in_waiting # count the number of bytes of the serial port
         if counter > 8:
             bytes_serial = ser.read(9)
             ser.reset_input_buffer()
-            
+            print("GOT HERE 4")
             if bytes_serial[0] == 0x59 and bytes_serial[1] == 0x59: # python3
+                print("REEEEEEEEEEEEEEEEEEEEEEEEE")
                 distance = bytes_serial[2] + bytes_serial[3]*256
                 print("Distance: " + str(distance))
                 if distance < 15:
