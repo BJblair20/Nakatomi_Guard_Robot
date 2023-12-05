@@ -3,8 +3,8 @@ from adafruit_motorkit import MotorKit
 import random
 kit = MotorKit()
 def runMotor():
-    kit.motor1.throttle = 0.6
-    kit.motor2.throttle = -0.6
+    kit.motor1.throttle = 0.5
+    kit.motor2.throttle = -0.5
 
 def stopMotor():
     kit.motor1.throttle = 0
@@ -21,11 +21,11 @@ def turn():
     if flip == 0:
         kit.motor1.throttle = 0.5
         kit.motor2.throttle = 0.5
-        time.sleep(1)
+        time.sleep(0.5)
     else:
         kit.motor1.throttle = -0.5
         kit.motor2.throttle = -0.5
-        time.sleep(1)
+        time.sleep(0.5)
 
 if __name__ == "__main__":
     kit.motor1.throttle = 0
