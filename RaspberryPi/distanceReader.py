@@ -44,6 +44,7 @@ def read_data():
                 ser.reset_input_buffer()
 
 def main():
+    print("GOT HERE")
     try:
         if ser.isOpen() == False:
             ser.open()
