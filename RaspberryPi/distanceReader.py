@@ -14,7 +14,7 @@ def read_data():
                 distance = bytes_serial[2] + bytes_serial[3]*256
                 print("Distance: " + str(distance))
                 if distance < 15:
-                    exit() 
+                    break
 
                 strength = bytes_serial[4] + bytes_serial[5]*256
                 temperature = bytes_serial[6] + bytes_serial[7]*256 # For TFLuna
