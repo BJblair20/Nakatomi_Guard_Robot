@@ -33,7 +33,7 @@ def camera():
 #t1 = threading.Thread(target=lights.soundCue, name='t1')
 #t2 = threading.Thread(target=lights.lightsCue, name='t2')
 
-motorControl = threading.setEvent()
+motorControl = threading.Event()
 
 #runMotor()
 
