@@ -1,5 +1,6 @@
 import serial
 import time
+#connection.close()
 ser = serial.Serial("/dev/ttyS0", 115200)
 # we define a new function that will get the data from LiDAR and publish it
 def read_data():
@@ -51,7 +52,7 @@ def main():
         if ser != None:
             ser.close()
             print("program interrupted by the user")
-            
+
 if __name__ == "__main__":
     main()
 

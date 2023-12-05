@@ -28,6 +28,9 @@ class FaceRecognition:
         self.encode_faces()
 
     def encode_faces(self):
+        #curDir = os.path.dirname(os.path.abspath(__file__))
+        #dir=os.path.join(curDir,"/faces")
+
         for image in os.listdir('faces'):
             face_image = face_recognition.load_image_file(f'faces/{image}')
             face_encoding = face_recognition.face_encodings(face_image)[0]
@@ -108,7 +111,7 @@ class FaceRecognition:
 
 if __name__ == '__main__':
     curDir = os.path.dirname(os.path.abspath(__file__))
-    dir=os.path.join(curDir,"../../App")
+    dir=os.path.join(curDir,"../App")
     dat1=dir + "/CSVTEST.txt"
     data = pd.read_csv(dat1)
     #print(data.keys())

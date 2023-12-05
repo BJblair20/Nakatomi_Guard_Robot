@@ -4,30 +4,47 @@ import os
 import killme
 import killJohnLenon
 import time
-import lights
 #import lights
-import lidar_reader
-import distanceReader
-import motor
+#import distanceReader
+#import motor
+import threadTest
 
-def run():
-    while True:
-        motor.runMotor()
-        distanceReader.main()
-        motor.turn()
 
+def runMotor():
+    global motorControl
+    while motorControl == True:
+        print("JJJJJ")
+        
+        
+        #motor.runMotor()
+        #distanceReader.main()
+        #motor.turn()
+
+def camera():
+    global motorControl
+    i =0
+    while i < 10:
+        print("I: " + str(i))
+        i+=1
+    motorControl = False
 
 
 #t1 = threading.Thread(target=lights.soundCue, name='t1')
 #t2 = threading.Thread(target=lights.lightsCue, name='t2')
- 
-#t2.start()
-#t1.start()
- 
-#t1.join()
-#t2.join()
 
-run()
+global motorControl
+motorControl = True
+
+t1 = threading.Thread(target=runMotor, name='t1')
+t2 = threading.Thread(target=camera, name='t2')
+
+t1.start()
+t2.start()
+ 
+t1.join()
+t2.join()
+
+#runMotor()
 
 #print("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFf")
 #time.sleep(9)
