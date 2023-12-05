@@ -28,9 +28,6 @@ class FaceRecognition:
         self.encode_faces()
 
     def encode_faces(self):
-        #curDir = os.path.dirname(os.path.abspath(__file__))
-        #dir=os.path.join(curDir,"/faces")
-
         for image in os.listdir('faces'):
             face_image = face_recognition.load_image_file(f'faces/{image}')
             face_encoding = face_recognition.face_encodings(face_image)[0]
@@ -53,7 +50,7 @@ class FaceRecognition:
 
             if self.process_current_frame:
                 small_frame = cv2.resize(frame, (0,0), fx=0.25, fy=0.25)
-                rgb_small_frame = small_frame[:,:,::-1]
+                rgb_small_frame = cv2.cvtColor(small_frame, cv2.COLOR_BGR2RGB)
 
                 #Find all faces in current frame
                 self.face_locations = face_recognition.face_locations(rgb_small_frame)
@@ -111,7 +108,7 @@ class FaceRecognition:
 
 if __name__ == '__main__':
     curDir = os.path.dirname(os.path.abspath(__file__))
-    dir=os.path.join(curDir,"../App")
+    dir=os.path.join(curDir,"../../App")
     dat1=dir + "/CSVTEST.txt"
     data = pd.read_csv(dat1)
     #print(data.keys())

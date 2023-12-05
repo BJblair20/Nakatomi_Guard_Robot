@@ -1,7 +1,7 @@
 
 import threading
 import os
-
+import faceRec
 import time
 import lights
 import distanceReader
@@ -23,11 +23,10 @@ def runMotor():
 
 def camera():
     global motorControl
-    i =0
-    while i < 10:
-        print("I: " + str(i))
-        i+=1
-    motorControl = False
+    time.sleep(2)
+    #faceRec.main()
+    motorControl=False
+    print("FFFFFAAAALSSE")
 
 
 #t1 = threading.Thread(target=lights.soundCue, name='t1')
