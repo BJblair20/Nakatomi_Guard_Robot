@@ -14,6 +14,7 @@ def runMotor():
     while motorControl == True:
         print("Running Motor")
         motor.runMotor()
+        print("Starting reader")
         distanceReader.main()
         print("Got out of reader")
         motor.turn()
