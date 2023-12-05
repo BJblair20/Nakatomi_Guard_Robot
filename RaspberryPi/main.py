@@ -35,8 +35,8 @@ def camera():
 global motorControl
 motorControl = True
 
-runMotor()
-"""
+#runMotor()
+
 t1 = threading.Thread(target=runMotor, name='t1')
 t2 = threading.Thread(target=camera, name='t2')
 
@@ -45,7 +45,7 @@ t2.start()
  
 t1.join()
 t2.join()
-"""
+
 
 #runMotor()
 
