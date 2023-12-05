@@ -108,7 +108,7 @@ class FaceRecognition:
 def main():
     print("GOT TO FILE")
     curDir = os.path.dirname(os.path.abspath(__file__))
-    dir=os.path.join(curDir,"../../App")
+    dir=os.path.join(curDir,"../App")
     dat1=dir + "/CSVTEST.txt"
     data = pd.read_csv(dat1)
     #print(data.keys())
