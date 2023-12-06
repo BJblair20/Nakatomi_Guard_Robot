@@ -15,7 +15,7 @@ import board
 #################.......................LIGHTS.....................................##############################
 #################################################################################################################
 def lightsCue():
-    pixels = neopixel.NeoPixel(board.D12, 32, auto_write=False)
+    pixels = neopixel.NeoPixel(board.D18, 32, auto_write=False)
     pixels.brightness = .5
     while not lightControl.is_set():
         for i in range(16):
@@ -31,7 +31,7 @@ def lightsCue():
 
 def lightsAlert():
     print("LIGHTS ALERT")
-    pixels = neopixel.NeoPixel(board.D12, 32, auto_write=False)
+    pixels = neopixel.NeoPixel(board.D18, 32, auto_write=False)
     pixels.brightness = .5
     while not lightControl.is_set():
         pixels = (255,211,0)
@@ -41,7 +41,7 @@ def lightsAlert():
 
 def lightsAlarm():
     print("LIGHTS ALARM")
-    pixels = neopixel.NeoPixel(board.D12, 32)
+    pixels = neopixel.NeoPixel(board.D18, 32)
     pixels.brightness = .5
     while not lightControl.is_set():
     #while True:
