@@ -2,18 +2,21 @@ import time
 import board
 import neopixel
 #import pygame
-from playsound import playsound
 import os, sys
+import pygame
+import threading
 
-global audioToggle
-global lightToggle
-audioToggle = False
-lightToggle = False
+
+global lightControl
+
+def set(lightControl):
+    lightControl.set()
+
 
 def lightsCue():
     pixels = neopixel.NeoPixel(board.D12, 32, auto_write=False)
     pixels.brightness = .5
-    while audioToggle == True:
+    while not lightControl.is_set():
         for i in range(16):
             pixels[i] = (255,0,0)
             pixels.show()
@@ -28,21 +31,16 @@ def lightsCue():
 def lightsAlert():
     pixels = neopixel.NeoPixel(board.D12, 32, auto_write=False)
     pixels.brightness = .5
-    while audioToggle == True:
+    while not lightControl.is_set():
         pixels = (255,211,0)
         time.sleep(0.5)
         pixels = (0,0,0)
 
 
 def lightsAlarm():
-    import time
-    import board
-    import neopixel
-
-
     pixels = neopixel.NeoPixel(board.D12, 32)
     pixels.brightness = .5
-    while True:
+    while not lightControl.is_set():
         for x in range (0, 16):
             pixels[x] = (255,0,0)
         time.sleep(.15)
@@ -61,21 +59,30 @@ def lightsAlarm():
             pixels[x] = (255,0,0)
 
 def soundCue():
-    while True:
-        audio_file = os.path.dirname(__file__) + '/Sound/calm.wav'
-        playsound(audio_file)
+    pygame.mixer.init()
+    audio_file = os.path.dirname(__file__) + '/Sound/calm.wav'
+    pygame.mixer.music.load(audio_file)
+    while not lightControl.is_set():
+        pygame.mixer.music.play()
+        while pygame.mixer.music.get_busy() == True:
+            continue
 
 def alarmCue():
-    while True:
-        audio_file = os.path.dirname(__file__) + '/Sound/alarmSound.wav'
-        playsound(audio_file)
+    pygame.mixer.init()
+    audio_file = os.path.dirname(__file__) + '/Sound/alarmSound.wav'
+    pygame.mixer.music.load(audio_file)
+    while not lightControl.is_set():
+        pygame.mixer.music.play()
+        while pygame.mixer.music.get_busy() == True:
+            continue
 
 def greeting():
+    pygame.mixer.init()
     audio_file = os.path.dirname(__file__) + '/Sound/welcome.wav'
-    playsound(audio_file)
-    #print(audio_file)
-    #my_sound = pygame.mixer.Sound(audio_file)
-    #my_sound.play()
+    pygame.mixer.music.load(audio_file)
+    pygame.mixer.music.play()
+    while pygame.mixer.music.get_busy() == True:
+        continue
 
 
 

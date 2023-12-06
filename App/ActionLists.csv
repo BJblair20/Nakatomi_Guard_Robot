@@ -1,4 +1,4 @@
-light,sound,alarm,notification,greeting
-0,0,0,0,1
-1,1,0,0,0
-0,0,1,0,0
+light,sound,alarm,notification,greeting,halt
+0,0,0,0,1,0
+1,1,0,0,0,1
+0,0,1,0,0,1
