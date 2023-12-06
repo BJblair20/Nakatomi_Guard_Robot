@@ -9,7 +9,6 @@ def runMotor():
 def stopMotor():
     kit.motor1.throttle = 0
     kit.motor2.throttle = 0
-    exit()
 
 
 def turn():
