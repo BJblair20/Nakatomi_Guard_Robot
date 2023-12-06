@@ -30,7 +30,7 @@ def camera():
     motorControl.set()
     print("FFFFFAAAALSSE")
     motor.stopMotor()
-    actionLists()
+    actionLists(color)
 
 def actionLists(color):
     global data
