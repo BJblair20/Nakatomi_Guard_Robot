@@ -78,6 +78,12 @@ def soundCue():
 def alarmCue():
     global motorControl
     print("ALARM SOUND")
+    audio_file = os.path.dirname(__file__) + '/Sound/alarmSound.wav'
+    #aplay sound.wav
+    import subprocess
+
+    subprocess.run(["aplay", audio_file]) 
+    """
     pygame.mixer.init()
     audio_file = os.path.dirname(__file__) + '/Sound/alarmSound.wav'
     pygame.mixer.music.load(audio_file)
@@ -86,6 +92,7 @@ def alarmCue():
         pygame.mixer.music.play()
         while pygame.mixer.music.get_busy() == True:
             continue
+            """
 
 def greeting():
     print("WELCOME")
