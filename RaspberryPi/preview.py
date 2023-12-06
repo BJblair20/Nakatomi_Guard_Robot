@@ -17,8 +17,8 @@ def change_user(new_user):
     try:
         subprocess.run(['sudo', '-u', new_user, 'ls'])
         print(f'Successfully switched to user: {new_user}')
-        subprocess.run(['whoami'], capture_output=True, text=True, check=True)
-        subprocess.run(['ls'])
+        result = subprocess.run(['whoami'], capture_output=True, text=True, check=True)
+        print(result.stdout.strip())
         print("-------------------")
     except subprocess.CalledProcessError as e:
         print(f'Error switching user: {e}')
