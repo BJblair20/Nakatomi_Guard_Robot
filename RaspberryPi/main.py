@@ -62,6 +62,10 @@ def lightsAlarm():
         for x in range(16, 32):
             pixels[x] = (255,0,0)
 
+#################################################################################################################
+#################.......................SOUND.....................................##############################
+#################################################################################################################
+
 def soundCue():
     pygame.mixer.init()
     audio_file = os.path.dirname(__file__) + '/Sound/calm.wav'
@@ -72,11 +76,12 @@ def soundCue():
             continue
 
 def alarmCue():
+    global motorControl
     print("ALARM SOUND")
     pygame.mixer.init()
     audio_file = os.path.dirname(__file__) + '/Sound/alarmSound.wav'
     pygame.mixer.music.load(audio_file)
-    while not lightControl.is_set():
+    while motorControl == True:
         pygame.mixer.music.play()
         while pygame.mixer.music.get_busy() == True:
             continue
@@ -161,7 +166,7 @@ dat1=dir + "/ActionLists.csv"
 global data
 data = pd.read_csv(dat1)
 
-motorControl = threading.Event()
+#motorControl = threading.Event()
 lightControl = threading.Event()
 #runMotor()
 
@@ -170,10 +175,14 @@ lightControl = threading.Event()
 t3 = threading.Thread(target=alarmCue, name='t3')
 t4 = threading.Thread(target=lightsAlarm, name='t4')
 
+global motorControl
+motorControl = True
+
+alarmCue()
 #t2.start()
-time.sleep(10)
+time.sleep(5)
 #t1.start()
-time.sleep(10)
+#time.sleep(10)
 t3.start()
 t4.start()
  
