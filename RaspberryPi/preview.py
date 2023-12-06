@@ -26,6 +26,6 @@ def change_user(new_user):
         print(f'Error switching user: {e}') 
 
 if __name__ == "__main__":
-    new_user = "root"
+    new_user = "pi"
     change_user(new_user)
     print("OUTPUT: " + get_current_user())
