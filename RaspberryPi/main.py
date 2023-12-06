@@ -81,7 +81,8 @@ def alarmCue():
     pygame.mixer.init()
     audio_file = os.path.dirname(__file__) + '/Sound/alarmSound.wav'
     pygame.mixer.music.load(audio_file)
-    while motorControl == True:
+    #while motorControl == True:
+    while not lightControl.is_set():
         pygame.mixer.music.play()
         while pygame.mixer.music.get_busy() == True:
             continue
@@ -178,19 +179,19 @@ t4 = threading.Thread(target=lightsAlarm, name='t4')
 global motorControl
 motorControl = True
 
-alarmCue()
+#alarmCue()
 #t2.start()
 time.sleep(5)
 motorControl = False
 #t1.start()
 #time.sleep(10)
-#t3.start()
-#t4.start()
+t3.start()
+t4.start()
  
 #t1.join()
 #t2.join()
-#t3.join()
-#t4.join()
+t3.join()
+t4.join()
 
 
 #runMotor()
