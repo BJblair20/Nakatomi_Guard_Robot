@@ -40,7 +40,7 @@ class FaceRecognition:
     def run_recognition(self):
         global data
         print(data)
-        video_capture = cv2.VideoCapture(0)#, cv2.CAP_DSHOW)
+        video_capture = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 
         if not video_capture.isOpened():
             print("Video source not found")
