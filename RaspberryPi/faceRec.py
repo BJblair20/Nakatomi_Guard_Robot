@@ -51,8 +51,8 @@ class FaceRecognition:
 
             if self.process_current_frame:
                 small_frame = cv2.resize(frame, (0,0), fx=0.25, fy=0.25)
-                rgb_small_frame = cv2.cvtColor(small_frame, cv2.COLOR_BGR2RGB)
-                #rgb_small_frame = cv2.cvtColor(small_frame, cv2.COLOR_BGR2GRAY)
+                rgb_small_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                #rgb_small_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
                 #Find all faces in current frame
                 self.face_locations = face_recognition.face_locations(rgb_small_frame)
@@ -76,13 +76,14 @@ class FaceRecognition:
                         
                         if authList == 'white':
                             print("YEEHAW WHITEY")
-                            return("White")
+                            #return("White")
                             #key = False
                         elif authList == 'black':
                             print("BLACK REEEE")
-                            return("Black")
+                            #return("Black")
                         else:
-                            return "Gray"
+                            print("y")
+                            #return "Gray"
                             #key = False
                         
 
@@ -104,10 +105,10 @@ class FaceRecognition:
                 cv2.rectangle(frame, (left, bottom - 35), (right, bottom), (0,0,255), -1)
                 #cv2.putText(frame, name, (left + 6, bottom -6), cv2.FONT_HERSHEY_DUPLEX, 0.8 (255, 255, 255), 1)
 
-            #cv2.imshow('Face Recognition', frame)
+            cv2.imshow('Face Recognition', rgb_small_frame)
 
-            #if cv2.waitKey(1)==ord('q'):
-            #    break
+            if cv2.waitKey(1)==ord('q'):
+                break
 
         video_capture.release()
         cv2.destroyAllWindows()
