@@ -58,7 +58,7 @@ def actionLists(color):
 
 curDir = os.path.dirname(os.path.abspath(__file__))
 dir=os.path.join(curDir,"../App")
-dat1=dir + "/CSVTEST.txt"
+dat1=dir + "/ActionLists.txt"
 global data
 data = pd.read_csv(dat1)
 
