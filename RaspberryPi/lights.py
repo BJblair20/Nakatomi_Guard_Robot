@@ -9,7 +9,7 @@ import threading
 
 global lightControl
 
-def set(lightControl):
+def setLights(lightControl):
     lightControl.set()
 
 

@@ -48,9 +48,20 @@ def actionLists(color):
     if data["greeting"][int(color)]==1:
         threads.append(threading.Thread(target=lights.greeting, name='t1'))
 
+    print("Threads made")
     for t in threads:
         t.start()
         t.join()
+
+    print("Threads joined")
+
+    if data["halt"][int(color)]==1:
+        print("NAKATOMI BOT:")
+        input("CLEAR TO CONTINUE? ")
+
+    lightControl.set()
+    lights.setLights(lightControl)
+    
 
 
 #t1 = threading.Thread(target=lights.soundCue, name='t1')
@@ -63,7 +74,7 @@ global data
 data = pd.read_csv(dat1)
 
 motorControl = threading.Event()
-
+lightControl = threading.Event()
 #runMotor()
 
 t1 = threading.Thread(target=runMotor, name='t1')
