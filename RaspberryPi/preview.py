@@ -15,3 +15,4 @@ def change_user(new_user):
 if __name__ == "__main__":
     new_user = "pi"
     change_user(new_user)
+    subprocess.run(['whoami'])
