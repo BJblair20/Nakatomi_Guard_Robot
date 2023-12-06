@@ -25,7 +25,7 @@ def lightsAlarm():
 
 def killLights():
     pixels = neopixel.NeoPixel(board.D18, 32)
-    pixels = (0,0,0)
+    pixels.fill(0,0,0)
 
 if __name__ == '__main__':
     killLights()
