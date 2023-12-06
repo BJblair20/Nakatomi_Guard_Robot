@@ -15,16 +15,17 @@ def get_current_user():
     
 def change_user(new_user):
     try:
-        subprocess.run(['sudo', '-u', new_user, 'ls'])
+        commands = ['sudo', '-u', new_user, "whoami", "ls", "whoami"]
+        subprocess.run(commands, check=True)
         print(f'Successfully switched to user: {new_user}')
-        result = subprocess.run(['whoami'], capture_output=True, text=True, check=True)
+
+        """ result = subprocess.run(['whoami'], capture_output=True, text=True, check=True)
         print(result.stdout.strip())
-        print("-------------------")
+        print("-------------------")"""
     except subprocess.CalledProcessError as e:
-        print(f'Error switching user: {e}')
+        print(f'Error switching user: {e}') 
 
 if __name__ == "__main__":
     new_user = "root"
     change_user(new_user)
     print("OUTPUT: " + get_current_user())
-    subprocess.run(['whoami'])
