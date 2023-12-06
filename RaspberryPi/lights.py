@@ -62,7 +62,7 @@ def soundCue():
     pygame.mixer.init()
     audio_file = os.path.dirname(__file__) + '/Sound/calm.wav'
     pygame.mixer.music.load(audio_file)
-    while not lightControl.is_set():
+    while True:
         pygame.mixer.music.play()
         while pygame.mixer.music.get_busy() == True:
             continue
