@@ -78,14 +78,14 @@ class FaceRecognition:
                         
                         if authList == 'white':
                             print("YEEHAW WHITEY")
-                            #return("White")
+                            return(0)
                             #key = False
                         elif authList == 'black':
                             print("BLACK REEEE")
-                            #return("Black")
+                            return(2)
                         else:
                             print("y")
-                            #return "Gray"
+                            return 1
                             #key = False
                         
 
@@ -107,10 +107,10 @@ class FaceRecognition:
                 cv2.rectangle(frame, (left, bottom - 35), (right, bottom), (0,0,255), -1)
                 cv2.putText(frame, name, (left + 6, bottom -6), cv2.FONT_HERSHEY_DUPLEX, 0.8, (255, 255, 255), 1)
 
-            cv2.imshow('Face Recognition', rgb_small_frame)
+            #cv2.imshow('Face Recognition', rgb_small_frame)
 
-            if cv2.waitKey(1)==ord('q'):
-                break
+            #if cv2.waitKey(1)==ord('q'):
+            #    break
 
         video_capture.release()
         cv2.destroyAllWindows()
