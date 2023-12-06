@@ -37,7 +37,7 @@ def actionLists(color):
     print("Got to lists!")
     global data
     threads = []
-
+    print(data)
     if data["light"][color]==1:
         threads.append(threading.Thread(target=lights.lightAlert, name='t1'))
     if data["sound"][color]==1:
