@@ -181,15 +181,16 @@ motorControl = True
 alarmCue()
 #t2.start()
 time.sleep(5)
+motorControl = False
 #t1.start()
 #time.sleep(10)
-t3.start()
-t4.start()
+#t3.start()
+#t4.start()
  
 #t1.join()
 #t2.join()
-t3.join()
-t4.join()
+#t3.join()
+#t4.join()
 
 
 #runMotor()
