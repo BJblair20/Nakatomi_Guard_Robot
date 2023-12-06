@@ -53,6 +53,7 @@ class FaceRecognition:
                 #small_frame = cv2.resize(frame, (0,0), fx=0.25, fy=0.25)
                 rgb_small_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
                 #rgb_small_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+                #yur
 
                 #Find all faces in current frame
                 self.face_locations = face_recognition.face_locations(rgb_small_frame)
