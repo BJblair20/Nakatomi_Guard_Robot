@@ -43,7 +43,8 @@ def lightsAlarm():
     print("LIGHTS ALARM")
     pixels = neopixel.NeoPixel(board.D12, 32)
     pixels.brightness = .5
-    while not lightControl.is_set():
+    #while not lightControl.is_set():
+    while True:
         for x in range (0, 16):
             pixels[x] = (255,0,0)
         time.sleep(.15)
