@@ -33,6 +33,7 @@ def camera():
     actionLists(color)
 
 def actionLists(color):
+    print("Got to lists!")
     global data
     threads = []
 
