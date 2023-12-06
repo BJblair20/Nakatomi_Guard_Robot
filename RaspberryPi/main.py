@@ -38,14 +38,14 @@ def actionLists(color):
     global data
     threads = []
     print(data)
-    if data["light"][color]==1:
+    if data["light"][int(color)]==1:
         threads.append(threading.Thread(target=lights.lightAlert, name='t1'))
-    if data["sound"][color]==1:
+    if data["sound"][int(color)]==1:
         threads.append(threading.Thread(target=lights.soundCue, name='t1'))
-    if data["alarm"][color]==1:
+    if data["alarm"][int(color)]==1:
         threads.append(threading.Thread(target=lights.lightsAlarm, name='t1'))
         threads.append(threading.Thread(target=lights.alarmCue, name='t1'))
-    if data["greeting"][color]==1:
+    if data["greeting"][int(color)]==1:
         threads.append(threading.Thread(target=lights.greeting, name='t1'))
 
     for t in threads:
