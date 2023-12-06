@@ -140,6 +140,8 @@ def actionLists(color):
         print("NAKATOMI BOT:")
         input("CLEAR TO CONTINUE? ")
 
+    print("GOT line 142 ")
+    time.sleep(8)
     lightControl.set()
     
     
