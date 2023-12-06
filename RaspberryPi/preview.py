@@ -1,10 +1,9 @@
+import pygame
 import os
-import pandas as pd
 
-
-curDir = os.path.dirname(os.path.abspath(__file__))
-dir=os.path.join(curDir,"../App")
-dat1=dir + "/ActionLists.csv"
-data = pd.read_csv(dat1)
-
-print(data["light"])
+pygame.mixer.init()
+audio_file = os.path.dirname(__file__) + '/Sound/alarmSound.wav'
+pygame.mixer.music.load(audio_file)
+pygame.mixer.music.play()
+while pygame.mixer.music.get_busy() == True:
+    continue
