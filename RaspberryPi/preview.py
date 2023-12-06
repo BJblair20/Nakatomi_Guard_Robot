@@ -15,7 +15,7 @@ def get_current_user():
     
 def change_user(new_user):
     try:
-        commands = ['sudo', '-u', new_user, "whoami", "ls", "whoami"]
+        commands = ['sudo', '-u', new_user, "whoami"]
         subprocess.run(commands, check=True)
         print(f'Successfully switched to user: {new_user}')
 
