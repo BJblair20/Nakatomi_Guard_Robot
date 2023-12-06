@@ -2,5 +2,3 @@ ID,Picture,name,list,description
 0,0.jpg,Anakin Skywalker,black,hates sand
 1,1.jpg,Brandon Blair,white,hates sand
 2,2.jpg,Barack Obama,white,hates sand
-3,3.jpg,BJ STALKER,black,loves sand
-4,4.jpg,Jack White,black,loves sand
