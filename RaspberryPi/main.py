@@ -31,7 +31,7 @@ def camera():
     print("FFFFFAAAALSSE")
     motor.stopMotor()
     print("motor stopped")
-    actionLists(color)
+    actionLists(int(color))
 
 def actionLists(color):
     print("Got to lists!")

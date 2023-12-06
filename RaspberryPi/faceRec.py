@@ -125,7 +125,7 @@ def start():
     data = pd.read_csv(dat1)
     #print(data.keys())
     fr = FaceRecognition()
-    fr.run_recognition() 
+    return fr.run_recognition() 
    
 if __name__ == '__main__':
     start()
