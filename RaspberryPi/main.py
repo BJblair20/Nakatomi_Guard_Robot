@@ -162,14 +162,20 @@ lightControl = threading.Event()
 
 t1 = threading.Thread(target=runMotor, name='t1')
 t2 = threading.Thread(target=camera, name='t2')
-
+t3 = threading.Thread(target=alarmCue, name='t3')
+t4 = threading.Thread(target=lightsAlarm, name='t4')
 
 t2.start()
 time.sleep(10)
 t1.start()
+time.sleep(10)
+t3.start()
+t4.start()
  
 t1.join()
 t2.join()
+t3.join()
+t4.join()
 
 
 #runMotor()
