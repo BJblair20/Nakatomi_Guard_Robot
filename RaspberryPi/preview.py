@@ -15,8 +15,7 @@ def get_current_user():
     
 def change_user(new_user):
     try:
-        audio_file = os.path.dirname(__file__) + '/Sound/alarmSound.wav'
-        commands = ['sudo', '-u', new_user, "aplay", audio_file]
+        commands = ['sudo', '-u', new_user, "./TEST.py"]
         subprocess.run(commands, check=True)
         print(f'Successfully switched to user: {new_user}')
 
@@ -27,6 +26,6 @@ def change_user(new_user):
         print(f'Error switching user: {e}') 
 
 if __name__ == "__main__":
-    new_user = "pi"
+    new_user = "root"
     change_user(new_user)
     print("OUTPUT: " + get_current_user())
