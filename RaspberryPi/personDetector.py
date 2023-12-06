@@ -29,6 +29,7 @@ while cap.isOpened():
             cv2.rectangle(image, (x, y),
                           (x + w, y + h), 
                           (0, 0, 255), 2)
+            print("PERSON DETECTED")
   
         # Showing the output Image
         cv2.imshow("Image", image)

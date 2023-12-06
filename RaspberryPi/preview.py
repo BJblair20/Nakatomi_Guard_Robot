@@ -1,12 +1,10 @@
-import time
+import os
+import pandas as pd
 
-from picamera2 import Picamera2, Preview
 
-picam2 = Picamera2()
-picam2.start_preview(Preview.QTGL)
+curDir = os.path.dirname(os.path.abspath(__file__))
+dir=os.path.join(curDir,"../App")
+dat1=dir + "/CSVTEST.txt"
+data = pd.read_csv(dat1)
 
-preview_config = picam2.create_preview_configuration()
-picam2.configure(preview_config)
-
-picam2.start()
-time.sleep(5)
+print(data[1][1])

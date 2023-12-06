@@ -40,7 +40,7 @@ class FaceRecognition:
     def run_recognition(self):
         global data
         print(data)
-        video_capture = cv2.VideoCapture(0)
+        video_capture = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 
         if not video_capture.isOpened():
             print("Video source not found")
@@ -81,6 +81,8 @@ class FaceRecognition:
                         elif authList == 'black':
                             print("BLACK REEEE")
                             return("Black")
+                        else:
+                            return "Gray"
                             #key = False
                         
 

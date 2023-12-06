@@ -6,6 +6,7 @@ import time
 import lights
 import distanceReader
 import motor
+import pandas as pd
 
 
 
@@ -33,6 +34,11 @@ def camera():
 
 #t1 = threading.Thread(target=lights.soundCue, name='t1')
 #t2 = threading.Thread(target=lights.lightsCue, name='t2')
+
+curDir = os.path.dirname(os.path.abspath(__file__))
+dir=os.path.join(curDir,"../App")
+dat1=dir + "/CSVTEST.txt"
+data = pd.read_csv(dat1)
 
 motorControl = threading.Event()
 
