@@ -30,6 +30,7 @@ def lightsCue():
         time.sleep(.01)
 
 def lightsAlert():
+    print("LIGHTS ALERT")
     pixels = neopixel.NeoPixel(board.D12, 32, auto_write=False)
     pixels.brightness = .5
     while not lightControl.is_set():
@@ -39,6 +40,7 @@ def lightsAlert():
 
 
 def lightsAlarm():
+    print("LIGHTS ALARM")
     pixels = neopixel.NeoPixel(board.D12, 32)
     pixels.brightness = .5
     while not lightControl.is_set():
@@ -69,6 +71,7 @@ def soundCue():
             continue
 
 def alarmCue():
+    print("LIGHTS ALARM")
     pygame.mixer.init()
     audio_file = os.path.dirname(__file__) + '/Sound/alarmSound.wav'
     pygame.mixer.music.load(audio_file)
@@ -78,6 +81,7 @@ def alarmCue():
             continue
 
 def greeting():
+    print("WELCOME")
     pygame.mixer.init()
     audio_file = os.path.dirname(__file__) + '/Sound/welcome.wav'
     pygame.mixer.music.load(audio_file)
