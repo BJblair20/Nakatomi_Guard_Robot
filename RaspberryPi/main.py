@@ -198,8 +198,8 @@ while True:
     time.sleep(10)
     t1.start()
     time.sleep(10)
-    #t1.join()
-    #t2.join()
+    t1.join()
+    t2.join()
 
     print("ENDED BOTH MAIN THREADS")
     motorControl.clear()
