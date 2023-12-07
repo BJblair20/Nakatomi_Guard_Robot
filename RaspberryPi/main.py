@@ -133,7 +133,7 @@ def actionLists(color):
     print("Threads made")
     for t in threads:
         t.start()
-        
+    print("Threads started")
     for t in threads:
         t.join()
 
