@@ -6,7 +6,7 @@ import os
 
 def soundCue():
     pygame.mixer.init()
-    audio_file = os.path.dirname(__file__) + '/Sound/alarmSound.wav'
+    audio_file = os.path.dirname(__file__) + '/Sound/calm.wav'
     pygame.mixer.music.load(audio_file)
     while True:
         pygame.mixer.music.play()
