@@ -43,6 +43,12 @@ def killLights():
     while not lightControl.is_set():
         subprocess.run(["sudo", "python3", audio_file], check=True)
 
+def whiteLights(): 
+    print("KILL LIGHTS")
+    audio_file = os.path.dirname(__file__) + '/lightsFiles/whiteLights.py'
+    while not lightControl.is_set():
+        subprocess.run(["sudo", "python3", audio_file], check=True)
+
 def lightsAlarm():
     print("LIGHTS ALARM")
     audio_file = os.path.dirname(__file__) + '/lightsFiles/alarmLights.py'
@@ -135,6 +141,7 @@ def actionLists(color):
         threads.append(threading.Thread(target=alarmCue, name='alarm sound'))
     if data["greeting"][int(color)]==1:
         threads.append(threading.Thread(target=greeting, name='greeting'))
+        threads.append(threading.Thread(target=whiteLights, name='greeting'))
 
     print("Threads made")
     for t in threads:
