@@ -34,19 +34,19 @@ def lightsAlert():
     print("LIGHTS ALERT")
     audio_file = os.path.dirname(__file__) + '/lightsFiles/alertLights.py'
     while not lightControl.is_set():
-        subprocess.run(["sudo", "python3", audio_file], check=True)
+        subprocess.Popen(["sudo", "python3", audio_file], check=True)
 
 def killLights(): 
     print("KILL LIGHTS")
     audio_file = os.path.dirname(__file__) + '/lightsFiles/killLights.py'
     while not lightControl.is_set():
-        subprocess.run(["sudo", "python3", audio_file], check=True)
+        subprocess.Popen(["sudo", "python3", audio_file], check=True)
 
 def lightsAlarm():
     print("LIGHTS ALARM")
     audio_file = os.path.dirname(__file__) + '/lightsFiles/alarmLights.py'
     while not lightControl.is_set():
-        subprocess.run(["sudo", "python3", audio_file], check=True)
+        subprocess.Popen(["sudo", "python3", audio_file], check=True)
 
 #################################################################################################################
 #################.......................SOUND.....................................##############################
