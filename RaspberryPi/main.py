@@ -44,9 +44,11 @@ def killLights():
     pixels = (0,0,0)
 
 def lightsAlarm():
-    command = "sudo python3 alarmLights.py"
-    print(command)
-    subprocess.run([command], check=True)
+    audio_file = os.path.dirname(__file__) + '/lightsFiles/alarmLights.py'
+    #command = "sudo python3 alarmLights.py"
+    #print(command)
+    print("HERERR")
+    subprocess.run(["sudo", "python3", audio_file], check=True)
 
 #################################################################################################################
 #################.......................SOUND.....................................##############################
