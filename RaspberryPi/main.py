@@ -31,16 +31,19 @@ def lightsCue():
         time.sleep(.01)
 
 def lightsAlert():
+    print("LIGHTS ALERT")
     audio_file = os.path.dirname(__file__) + '/lightsFiles/alertLights.py'
     while not lightControl.is_set():
         subprocess.run(["sudo", "python3", audio_file], check=True)
 
 def killLights(): 
+    print("KILL LIGHTS")
     audio_file = os.path.dirname(__file__) + '/lightsFiles/killLights.py'
     while not lightControl.is_set():
         subprocess.run(["sudo", "python3", audio_file], check=True)
 
 def lightsAlarm():
+    print("LIGHTS ALARM")
     audio_file = os.path.dirname(__file__) + '/lightsFiles/alarmLights.py'
     while not lightControl.is_set():
         subprocess.run(["sudo", "python3", audio_file], check=True)
@@ -121,21 +124,23 @@ def actionLists(color):
     threads = []
     print(data)
     if data["light"][int(color)]==1:
-        threads.append(threading.Thread(target=lightsAlert, name='t1'))
+        threads.append(threading.Thread(target=lightsAlert, name='light'))
     if data["sound"][int(color)]==1:
-        threads.append(threading.Thread(target=soundCue, name='t1'))
+        threads.append(threading.Thread(target=soundCue, name='sound'))
     if data["alarm"][int(color)]==1:
-        threads.append(threading.Thread(target=lightsAlarm, name='t1'))
-        threads.append(threading.Thread(target=alarmCue, name='t1'))
+        threads.append(threading.Thread(target=lightsAlarm, name='alarm light'))
+        threads.append(threading.Thread(target=alarmCue, name='alarm sound'))
     if data["greeting"][int(color)]==1:
-        threads.append(threading.Thread(target=greeting, name='t1'))
+        threads.append(threading.Thread(target=greeting, name='greeting'))
 
     print("Threads made")
     for t in threads:
         t.start()
+        print("Starting " + t.getName())
     print("Threads started")
     for t in threads:
         t.join()
+        print("Joining " + t.getName())
 
     print("Threads joined")
 
