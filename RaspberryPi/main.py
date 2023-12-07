@@ -44,9 +44,9 @@ def killLights():
     pixels = (0,0,0)
 
 def lightsAlarm():
-    command = "python3 lightsFiles/alarmLights.py"
+    command = "sudo python3 alarmLights.py"
     print(command)
-    subprocess.run(['sudo', '-u', 'sudo', 'bash', '-c', command], check=True)
+    subprocess.run([command], check=True)
 
 #################################################################################################################
 #################.......................SOUND.....................................##############################
