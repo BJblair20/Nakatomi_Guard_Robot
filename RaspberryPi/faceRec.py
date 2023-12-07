@@ -84,8 +84,8 @@ class FaceRecognition:
                             print("BLACK REEEE")
                             return(2)
                         else:
-                            print("y")
-                            return 1
+                            print("UNKNOWN")
+                            return(1)
                             #key = False
                         
 
@@ -94,7 +94,8 @@ class FaceRecognition:
                     print(self.face_names)
                     print(name)
                     if name == 'Unknown':
-                        return 1
+                        print("UNKNOWN")
+                        return(1)
                     
 
             self.process_current_frame = not self.process_current_frame
