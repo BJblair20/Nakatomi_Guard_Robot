@@ -5,7 +5,7 @@ import pygame
 import os
 
 def soundCue():
-    pygame.mixer.init()
+    pygame.mixer.init('TYLT')
     audio_file = os.path.dirname(__file__) + '/Sound/calm.wav'
     pygame.mixer.music.load(audio_file)
     while True:
@@ -40,4 +40,4 @@ def killLights():
         pixels[x] = (0,0,0)
 
 if __name__ == '__main__':
-    soundCue()
+    killLights()
