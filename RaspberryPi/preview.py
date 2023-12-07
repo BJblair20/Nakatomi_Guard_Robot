@@ -16,7 +16,8 @@ def get_current_user():
 def change_user(new_user):
     try:
         #commands = ['sudo', '-u', new_user, "python", "TEST.py"]
-        command = "python3 TEST.py"
+        command = "aplay " + audio_file
+        print(command)
         subprocess.run(['sudo', '-u', 'pi', 'bash', '-c', command], check=True)
         print(f'Successfully switched to user: {new_user}')
 
