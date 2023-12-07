@@ -3,7 +3,6 @@ import threading
 import os
 import faceRec
 import time
-import lights
 import distanceReader
 import motor
 import pandas as pd
@@ -200,7 +199,7 @@ while True:
 
     print("ENDED BOTH MAIN THREADS")
     motorControl.clear()
-    
+
     userIn = input("Continue? ")
     if userIn != 'y':
         break
