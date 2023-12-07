@@ -172,7 +172,6 @@ t2 = threading.Thread(target=camera, name='t2')
 #alarmCue()
 t2.start()
 time.sleep(10)
-motorControl = False
 t1.start()
 time.sleep(10)
 #t3.start()
