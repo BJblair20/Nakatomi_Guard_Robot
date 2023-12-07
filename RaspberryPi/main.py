@@ -109,6 +109,7 @@ def runMotor():
         motor.turn()
         print("Motor Turned")
         time.sleep(3)
+    print("Done with motor")
 
 #################################################################################################################
 #################.......................CAMERA.....................................##############################
@@ -158,12 +159,12 @@ def actionLists(color):
         print("NAKATOMI BOT:")
         userIn = input("CLEAR TO CONTINUE? ")
 
-    print("GOT line 142 ")
+    
     #time.sleep(4)
     lightControl.set()
     time.sleep(3)
     lightControl.clear()
-    
+    print("GOT line 167 ")
     
 
 
@@ -181,8 +182,8 @@ lightControl = threading.Event()
 #runMotor()
 
 while True:
-    t1 = threading.Thread(target=runMotor, name='t1')
-    t2 = threading.Thread(target=camera, name='t2')
+    t1 = threading.Thread(target=runMotor, name='runMotorThread')
+    t2 = threading.Thread(target=camera, name='runCameraThread')
     #t3 = threading.Thread(target=alarmCue, name='t3')
     #t4 = threading.Thread(target=lightsAlarm, name='t4')
 
