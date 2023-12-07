@@ -93,6 +93,8 @@ class FaceRecognition:
                     print("OUT: ")
                     print(self.face_names)
                     print(name)
+                    if name == 'Unknown':
+                        return 1
                     
 
             self.process_current_frame = not self.process_current_frame
