@@ -31,23 +31,17 @@ def lightsCue():
         time.sleep(.01)
 
 def lightsAlert():
-    print("LIGHTS ALERT")
-    pixels = neopixel.NeoPixel(board.D18, 32, auto_write=False)
-    pixels.brightness = .5
+    audio_file = os.path.dirname(__file__) + '/lightsFiles/alertLights.py'
     while not lightControl.is_set():
-        pixels = (255,211,0)
-        time.sleep(0.5)
-        pixels = (0,0,0)
+        subprocess.run(["sudo", "python3", audio_file], check=True)
 
-def killLights():
-    pixels = neopixel.NeoPixel(board.D18, 32)
-    pixels = (0,0,0)
+def killLights(): 
+    audio_file = os.path.dirname(__file__) + '/lightsFiles/killLights.py'
+    while not lightControl.is_set():
+        subprocess.run(["sudo", "python3", audio_file], check=True)
 
 def lightsAlarm():
     audio_file = os.path.dirname(__file__) + '/lightsFiles/alarmLights.py'
-    #command = "sudo python3 alarmLights.py"
-    #print(command)
-    print("HERERR")
     while not lightControl.is_set():
         subprocess.run(["sudo", "python3", audio_file], check=True)
 
@@ -163,31 +157,31 @@ dat1=dir + "/ActionLists.csv"
 global data
 data = pd.read_csv(dat1)
 
-#motorControl = threading.Event()
+motorControl = threading.Event()
 lightControl = threading.Event()
 #runMotor()
 
-#t1 = threading.Thread(target=runMotor, name='t1')
-#t2 = threading.Thread(target=camera, name='t2')
-t3 = threading.Thread(target=alarmCue, name='t3')
-t4 = threading.Thread(target=lightsAlarm, name='t4')
+t1 = threading.Thread(target=runMotor, name='t1')
+t2 = threading.Thread(target=camera, name='t2')
+#t3 = threading.Thread(target=alarmCue, name='t3')
+#t4 = threading.Thread(target=lightsAlarm, name='t4')
 
-global motorControl
-motorControl = True
+#global motorControl
+#motorControl = True
 
 #alarmCue()
-#t2.start()
-time.sleep(5)
+t2.start()
+time.sleep(10)
 motorControl = False
-#t1.start()
-#time.sleep(10)
-t3.start()
-t4.start()
+t1.start()
+time.sleep(10)
+#t3.start()
+#t4.start()
  
-#t1.join()
-#t2.join()
-t3.join()
-t4.join()
+t1.join()
+t2.join()
+#t3.join()
+#t4.join()
 
 
 #runMotor()
