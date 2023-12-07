@@ -67,6 +67,7 @@ def alarmCue():
     audio_file = os.path.dirname(__file__) + '/Sound/alarmSound.wav'
     #aplay sound.wav
     #import subprocess
+    """
     while not lightControl.is_set():
         subprocess.run(["aplay", audio_file]) 
     """
@@ -78,7 +79,7 @@ def alarmCue():
         pygame.mixer.music.play()
         while pygame.mixer.music.get_busy() == True:
             continue
-            """
+            
             
 
 def greeting():
