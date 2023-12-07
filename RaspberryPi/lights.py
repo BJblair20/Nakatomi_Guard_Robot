@@ -5,6 +5,7 @@ import neopixel
 import os, sys
 import pygame
 import threading
+from playsound import playsound
 
 
 global lightControl
@@ -77,15 +78,21 @@ def alarmCue():
             continue
 
 def greeting():
+    audio_file = os.path.dirname(__file__) + '/Sound/welcome.wav'
+    print("Got to sound?")
+    playsound(audio_file)
+    
+    """
     pygame.mixer.init()
     audio_file = os.path.dirname(__file__) + '/Sound/welcome.wav'
     pygame.mixer.music.load(audio_file)
     pygame.mixer.music.play()
     while pygame.mixer.music.get_busy() == True:
         continue
+        """
 
 
 
 if __name__ == '__main__':
     #pygame.init()
-    lightsAlarm()
+    greeting()
