@@ -109,7 +109,7 @@ def runMotor():
         motor.turn()
         print("Motor Turned")
         time.sleep(3)
-    print("Done with motor")
+    print("Done with motor----------------")
 
 #################################################################################################################
 #################.......................CAMERA.....................................##############################
@@ -124,6 +124,8 @@ def camera():
     motor.stopMotor()
     print("motor stopped")
     actionLists(int(color))
+    print("End of camera------------------")
+    return
 
 def actionLists(color):
     print("Got to lists!")
@@ -165,6 +167,7 @@ def actionLists(color):
     time.sleep(3)
     lightControl.clear()
     print("GOT line 167 ")
+    return
     
 
 
@@ -195,8 +198,8 @@ while True:
     time.sleep(10)
     t1.start()
     time.sleep(10)
-    t1.join()
-    t2.join()
+    #t1.join()
+    #t2.join()
 
     print("ENDED BOTH MAIN THREADS")
     motorControl.clear()
