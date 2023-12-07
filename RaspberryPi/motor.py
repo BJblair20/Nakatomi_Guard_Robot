@@ -18,7 +18,7 @@ def turn():
     time.sleep(1.5)
     kit.motor1.throttle = -0.5
     kit.motor2.throttle = 0.5
-    time.sleep(3)
+    time.sleep(1.5)
 
     flip = random.randint(0, 1)
 
