@@ -15,20 +15,6 @@ import subprocess
 #################################################################################################################
 #################.......................LIGHTS.....................................##############################
 #################################################################################################################
-def lightsCue():
-    pixels = neopixel.NeoPixel(board.D18, 32, auto_write=False)
-    pixels.brightness = .5
-    while not lightControl.is_set():
-        for i in range(16):
-            pixels[i] = (255,0,0)
-            pixels.show()
-        for i in range(16,32):
-            pixels[i] = (0,0,255)
-            pixels.show()
-        for i in range(31,0,-1):
-            pixels[i]=(0,0,0)
-            pixels.show()
-        time.sleep(.01)
 
 def lightsAlert():
     print("LIGHTS ALERT")
@@ -44,7 +30,7 @@ def killLights():
         subprocess.run(["sudo", "python3", audio_file], check=True)
 
 def whiteLights(): 
-    print("KILL LIGHTS")
+    print("WHITE LIGHTS")
     audio_file = os.path.dirname(__file__) + '/lightsFiles/whiteLights.py'
     subprocess.run(["sudo", "python3", audio_file], check=True)
 
@@ -59,7 +45,8 @@ def lightsAlarm():
 #################################################################################################################
 
 def soundCue():
-    audio_file = os.path.dirname(__file__) + '/Sound/alarmSound.wav'
+    print("ALERT SOUND")
+    audio_file = os.path.dirname(__file__) + '/Sound/calm.wav'
     while not lightControl.is_set():
         subprocess.run(["aplay", audio_file]) 
         time.sleep(3)
@@ -79,9 +66,10 @@ def alarmCue():
     audio_file = os.path.dirname(__file__) + '/Sound/alarmSound.wav'
     #aplay sound.wav
     #import subprocess
-    """
+    
     while not lightControl.is_set():
         subprocess.run(["aplay", audio_file]) 
+        time.sleep(3)
     """
     pygame.mixer.init()
     audio_file = os.path.dirname(__file__) + '/Sound/alarmSound.wav'
@@ -91,7 +79,7 @@ def alarmCue():
         pygame.mixer.music.play()
         while pygame.mixer.music.get_busy() == True:
             continue
-            
+    """
             
 
 def greeting():
@@ -147,15 +135,16 @@ def actionLists(color):
     if data["greeting"][int(color)]==1:
         threads.append(threading.Thread(target=greeting, name='greeting'))
         threads.append(threading.Thread(target=whiteLights, name='greeting'))
-
+    
     print("Threads made")
     for t in threads:
-        t.start()
         print("Starting " + t.getName())
+        t.start()
     print("Threads started")
     for t in threads:
-        t.join()
         print("Joining " + t.getName())
+        t.join()
+        
 
     print("Threads joined")
 
