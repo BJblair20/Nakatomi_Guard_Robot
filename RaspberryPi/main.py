@@ -195,14 +195,19 @@ while True:
     time.sleep(10)
     t1.start()
     time.sleep(10)
+    t1.join()
+    t2.join()
 
     print("ENDED BOTH MAIN THREADS")
     motorControl.clear()
+    
+    userIn = input("Continue? ")
+    if userIn != 'y':
+        break
 #t3.start()
 #t4.start()
  
-t1.join()
-t2.join()
+    
 #t3.join()
 #t4.join()
 

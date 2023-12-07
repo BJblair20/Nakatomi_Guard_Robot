@@ -13,7 +13,7 @@ def read_data():
             if bytes_serial[0] == 0x59 and bytes_serial[1] == 0x59: # python3
                 distance = bytes_serial[2] + bytes_serial[3]*256
                 print("Distance: " + str(distance))
-                if distance < 35:
+                if distance < 25:
                     ser.reset_input_buffer()
                     ser.close()
                     break
