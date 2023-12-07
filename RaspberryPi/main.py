@@ -34,7 +34,7 @@ def lightsAlert():
     print("LIGHTS ALERT")
     audio_file = os.path.dirname(__file__) + '/lightsFiles/alertLights.py'
     while not lightControl.is_set():
-        subprocess.Popen(["sudo", "python3", audio_file])
+        subprocess.run(["sudo", "python3", audio_file])
         time.sleep(1)
 
 def killLights(): 
