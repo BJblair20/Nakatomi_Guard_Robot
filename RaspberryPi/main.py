@@ -48,7 +48,8 @@ def lightsAlarm():
     #command = "sudo python3 alarmLights.py"
     #print(command)
     print("HERERR")
-    subprocess.run(["sudo", "python3", audio_file], check=True)
+    while not lightControl.is_set():
+        subprocess.run(["sudo", "python3", audio_file], check=True)
 
 #################################################################################################################
 #################.......................SOUND.....................................##############################
@@ -64,14 +65,14 @@ def soundCue():
             continue
 
 def alarmCue():
-    global motorControl
+    #global motorControl
     print("ALARM SOUND")
-    audio_file = os.path.dirname(__file__) + '/Sound/alarmSound.wav'
+    #audio_file = os.path.dirname(__file__) + '/Sound/alarmSound.wav'
     #aplay sound.wav
-    import subprocess
+    #import subprocess
 
-    subprocess.run(["aplay", audio_file]) 
-    """
+    #subprocess.run(["aplay", audio_file]) 
+    
     pygame.mixer.init()
     audio_file = os.path.dirname(__file__) + '/Sound/alarmSound.wav'
     pygame.mixer.music.load(audio_file)
@@ -80,7 +81,7 @@ def alarmCue():
         pygame.mixer.music.play()
         while pygame.mixer.music.get_busy() == True:
             continue
-            """
+            
 
 def greeting():
     print("WELCOME")
