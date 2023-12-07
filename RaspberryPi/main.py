@@ -64,8 +64,8 @@ def soundCue():
     pygame.mixer.music.load(audio_file)
     while not lightControl.is_set():
         pygame.mixer.music.play()
-        while pygame.mixer.music.get_busy() == True:
-            continue
+        #while pygame.mixer.music.get_busy() == True:
+        #    continue
 
 def alarmCue():
     #global motorControl
